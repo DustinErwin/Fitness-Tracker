@@ -21,6 +21,7 @@ const workoutSchema = new Schema({
       },
       duration: {
         type: Number,
+        default: 10,
         min: [5, "Duration too short."],
         max: [60, "One hour is the max duration"],
         required: "Please enter how long the exercise will be.",
