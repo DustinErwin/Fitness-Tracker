@@ -28,7 +28,9 @@ router.put("/api/workouts/:id", (req, res) => {
       }
       res.json(dbWorkout);
     }
-  );
+  ).catch((err) => {
+    res.status(422).json(err);
+  });
 });
 
 router.post("/api/workouts", ({ body }, res) => {
