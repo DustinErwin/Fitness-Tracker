@@ -5,7 +5,6 @@ router.get("/api/workouts", (req, res) => {
   Workout.find({})
     .then((data) => {
       const dbWorkout = data[data.length - 1];
-      console.log(dbWorkout);
       res.json({
         _id: dbWorkout._id,
         day: dbWorkout.day,
@@ -38,6 +37,7 @@ router.post("/api/workouts", ({ body }, res) => {
     .then((dbWorkout) => {
       res.json(dbWorkout);
     })
+
     .catch((err) => {
       res.status(400).json(err);
     });
