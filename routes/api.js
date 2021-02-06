@@ -48,8 +48,7 @@ router.get("/api/workouts/range", (req, res) => {
     .then((dbWorkout) => {
       // Workout.aggregate([
       //   {
-      //     $group: {
-      //       _id: null,
+      //     $addFields: {
       //       totalDuration: { $sum: "$exercises.duration" },
       //     },
       //   },
